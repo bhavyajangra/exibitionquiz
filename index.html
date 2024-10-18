@@ -1,0 +1,144 @@
+<html>
+<head>
+<base href="https://quiz.schoolexhibition.edu/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Exhibition Quiz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .quiz-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+  }
+  h1 {
+    color: #4a4a4a;
+    text-align: center;
+  }
+  .question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+  }
+  .option {
+    background-color: #e9ecef;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .option:hover {
+    background-color: #ced4da;
+  }
+  .selected {
+    background-color: #007bff;
+    color: white;
+  }
+  .next-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto 0;
+    transition: background-color 0.3s ease;
+  }
+  .next-btn:hover {
+    background-color: #218838;
+  }
+  .result {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Welcome to Our School Exhibition Quiz!</h1>
+    <div id="quiz">
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <button class="next-btn" id="next-btn">Next</button>
+    </div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Which famous artist painted the Mona Lisa?",
+        options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
+        correct: 1 // Index of the correct answer (Leonardo da Vinci)
+      },
+      {
+        question: "What do you call a sculpture of a person's head and shoulders?",
+        options: ["A bust", "A torso", "A portrait", "A selfie"],
+        correct: 0 // Index of the correct answer (A bust)
+      },
+      {
+        question: "Which of these colours is NOT a primary colour?",
+        options: ["Red", "Yellow", "Green", "Blue"],
+        correct: 2 // Index of the correct answer (Green)
+      },
+      {
+        question: "Which art movement is known for its use of abstract forms and bold colors?", 
+        options: ["Impressionism", "Realism", "Surrealism", "Abstract Expressionism"],
+        correct: 3 // Index of the correct answer (Abstract Expressionism)
+      },
+      {
+        question: "Which of these is NOT a type of art?",
+        options: ["Photography", "Cooking", "Sculpture", "Painting"],
+        correct: 1 // Index of the correct answer (Cooking)
+      },
+      {
+        question: "What do you call a picture made by arranging small pieces of coloured tile?",
+        options: ["A collage", "A mosaic", "A jigsaw", "A stained glass window"],
+        correct: 1 // Index of the correct answer (A mosaic)
+      },
+      {
+        question: "Which art technique uses small dots to create a picture?",
+        options: ["Pointillism", "Impressionism", "Cubism", "Surrealism"],
+        correct: 0 // Index of the correct answer (Pointillism)
+      },
+      {
+        question: "What is the term for the arrangement of elements in a work of art?",
+        options: ["Perspective", "Composition", "Texture", "Hue"],
+        correct: 1 // Index of the correct answer (Composition)
+      },
+      {
+        question: "Which of these artists is famous for cutting off his own ear?",
+        options: ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Michelangelo"],
+        correct: 1 // Index of the correct answer (Vincent van Gogh)
+      },
+      {
+        question: "What do you call a painting of a bowl of fruit?",
+        options: ["A landscape", "A portrait", "A still life", "A selfie"],
+        correct: 2 // Index of the correct answer (A still life)
+      }
+    ];
+
+    // ... (rest of your JavaScript code remains the same)
+  </script>
+</body>
+</html>
