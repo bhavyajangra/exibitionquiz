@@ -89,56 +89,128 @@
       {
         question: "Which famous artist painted the Mona Lisa?",
         options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
-        correct: 1 // Index of the correct answer (Leonardo da Vinci)
+        correct: 1 
       },
       {
         question: "What do you call a sculpture of a person's head and shoulders?",
         options: ["A bust", "A torso", "A portrait", "A selfie"],
-        correct: 0 // Index of the correct answer (A bust)
+        correct: 0 
       },
       {
         question: "Which of these colours is NOT a primary colour?",
         options: ["Red", "Yellow", "Green", "Blue"],
-        correct: 2 // Index of the correct answer (Green)
+        correct: 2 
       },
       {
         question: "Which art movement is known for its use of abstract forms and bold colors?", 
         options: ["Impressionism", "Realism", "Surrealism", "Abstract Expressionism"],
-        correct: 3 // Index of the correct answer (Abstract Expressionism)
+        correct: 3 
       },
       {
         question: "Which of these is NOT a type of art?",
         options: ["Photography", "Cooking", "Sculpture", "Painting"],
-        correct: 1 // Index of the correct answer (Cooking)
+        correct: 1 
       },
       {
         question: "What do you call a picture made by arranging small pieces of coloured tile?",
         options: ["A collage", "A mosaic", "A jigsaw", "A stained glass window"],
-        correct: 1 // Index of the correct answer (A mosaic)
+        correct: 1 
       },
       {
         question: "Which art technique uses small dots to create a picture?",
         options: ["Pointillism", "Impressionism", "Cubism", "Surrealism"],
-        correct: 0 // Index of the correct answer (Pointillism)
+        correct: 0
       },
       {
         question: "What is the term for the arrangement of elements in a work of art?",
         options: ["Perspective", "Composition", "Texture", "Hue"],
-        correct: 1 // Index of the correct answer (Composition)
+        correct: 1 
       },
       {
         question: "Which of these artists is famous for cutting off his own ear?",
         options: ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Michelangelo"],
-        correct: 1 // Index of the correct answer (Vincent van Gogh)
+        correct: 1 
       },
       {
         question: "What do you call a painting of a bowl of fruit?",
         options: ["A landscape", "A portrait", "A still life", "A selfie"],
-        correct: 2 // Index of the correct answer (A still life)
+        correct: 2 
       }
     ];
 
-    // ... (rest of your JavaScript code remains the same)
+    let currentQuestion = 0;
+    let score = 0;
+    let selectedOption = -1;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("next-btn");
+    const resultEl = document.getElementById("result");
+
+    function loadQuestion() {
+      const question = quizData[currentQuestion];
+      questionEl.textContent = question.question;
+
+      optionsEl.innerHTML = "";
+      for (let i = 0; i < question.options.length; i++) {
+        const option = document.createElement("button");
+        option.classList.add("option");
+        option.textContent = question.options[i];
+        option.addEventListener("click", () => selectOption(i));
+        optionsEl.appendChild(option);
+      }
+
+      nextBtn.style.display = "none";
+      selectedOption = -1;
+    }
+
+    function selectOption(index) {
+      const options = optionsEl.children;
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove("selected");
+      }
+      options[index].classList.add("selected");
+      selectedOption = index;
+      nextBtn.style.display = "block";
+    }
+
+    function checkAnswer() {
+      if (selectedOption === quizData[currentQuestion].correct) {
+        score++;
+      }
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (selectedOption === -1) return;
+      
+      checkAnswer();
+      currentQuestion++;
+
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult() {
+      questionEl.style.display = "none";
+      optionsEl.style.display = "none";
+      nextBtn.style.display = "none";
+      resultEl.textContent = `You scored ${score} out of ${quizData.length}!`;
+      
+      if (score === quizData.length) {
+        resultEl.innerHTML += "<br>Perfect score! You're an art expert!";
+      } else if (score >= quizData.length * 0.7) {
+        resultEl.innerHTML += "<br>Great job! You know your art!";
+      } else if (score >= quizData.length * 0.5) {
+        resultEl.innerHTML += "<br>Not bad! There's still more to learn about art!";
+      } else {
+        resultEl.innerHTML += "<br>Keep exploring the world of art to learn more!";
+      }
+    }
+
+    loadQuestion();
   </script>
 </body>
 </html>
