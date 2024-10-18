@@ -1,6 +1,4 @@
-<html>
-<head>
-<base href="https://quiz.schoolexhibition.edu/">
+<html><head><base href="https://quiz.schoolexhibition.edu/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>School Exhibition Quiz</title>
@@ -87,54 +85,29 @@
   <script>
     const quizData = [
       {
-        question: "Which famous artist painted the Mona Lisa?",
-        options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
-        correct: 1 
+        question: "What year was our school founded?",
+        options: ["1920", "1945", "1960", "1985"],
+        correct: 1
       },
       {
-        question: "What do you call a sculpture of a person's head and shoulders?",
-        options: ["A bust", "A torso", "A portrait", "A selfie"],
-        correct: 0 
+        question: "Which famous scientist visited our school in 2010?",
+        options: ["Stephen Hawking", "Jane Goodall", "Neil deGrasse Tyson", "Bill Nye"],
+        correct: 2
       },
       {
-        question: "Which of these colours is NOT a primary colour?",
-        options: ["Red", "Yellow", "Green", "Blue"],
-        correct: 2 
+        question: "What is the name of our school's mascot?",
+        options: ["Leo the Lion", "Eddie the Eagle", "Timmy the Tiger", "Ollie the Owl"],
+        correct: 3
       },
       {
-        question: "Which art movement is known for its use of abstract forms and bold colors?", 
-        options: ["Impressionism", "Realism", "Surrealism", "Abstract Expressionism"],
-        correct: 3 
-      },
-      {
-        question: "Which of these is NOT a type of art?",
-        options: ["Photography", "Cooking", "Sculpture", "Painting"],
-        correct: 1 
-      },
-      {
-        question: "What do you call a picture made by arranging small pieces of coloured tile?",
-        options: ["A collage", "A mosaic", "A jigsaw", "A stained glass window"],
-        correct: 1 
-      },
-      {
-        question: "Which art technique uses small dots to create a picture?",
-        options: ["Pointillism", "Impressionism", "Cubism", "Surrealism"],
+        question: "Which sport has our school won the most championships in?",
+        options: ["Basketball", "Soccer", "Swimming", "Track and Field"],
         correct: 0
       },
       {
-        question: "What is the term for the arrangement of elements in a work of art?",
-        options: ["Perspective", "Composition", "Texture", "Hue"],
-        correct: 1 
-      },
-      {
-        question: "Which of these artists is famous for cutting off his own ear?",
-        options: ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Michelangelo"],
-        correct: 1 
-      },
-      {
-        question: "What do you call a painting of a bowl of fruit?",
-        options: ["A landscape", "A portrait", "A still life", "A selfie"],
-        correct: 2 
+        question: "What is the title of our school's anthem?",
+        options: ["Forever Learning", "Wisdom and Strength", "United We Stand", "Reach for the Stars"],
+        correct: 3
       }
     ];
 
@@ -200,17 +173,16 @@
       resultEl.textContent = `You scored ${score} out of ${quizData.length}!`;
       
       if (score === quizData.length) {
-        resultEl.innerHTML += "<br>Perfect score! You're an art expert!";
+        resultEl.innerHTML += "<br>Perfect score! You're an expert on our school's history!";
       } else if (score >= quizData.length * 0.7) {
-        resultEl.innerHTML += "<br>Great job! You know your art!";
+        resultEl.innerHTML += "<br>Great job! You know our school well!";
       } else if (score >= quizData.length * 0.5) {
-        resultEl.innerHTML += "<br>Not bad! There's still more to learn about art!";
+        resultEl.innerHTML += "<br>Not bad! There's still more to learn about our school!";
       } else {
-        resultEl.innerHTML += "<br>Keep exploring the world of art to learn more!";
+        resultEl.innerHTML += "<br>Keep exploring our exhibition to learn more about our school!";
       }
     }
 
     loadQuestion();
   </script>
-</body>
-</html>
+</body></html>
