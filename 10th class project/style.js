@@ -17,6 +17,69 @@ answers: [
 { text: "Bill Nye", correct: true},
 ]
 },
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
+  {
+question: "What year was our school founded?",
+answers: [
+{ text: "1920", correct: false},
+{ text: "1945", correct: false},
+{ text: "1960", correct: false},
+{ text: "1985", correct: true},
+]
+},
 ];
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
